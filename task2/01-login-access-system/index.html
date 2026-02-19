@@ -7,21 +7,20 @@
 </head>
 <body>
     <h2>Login Access System</h2>
-    <!-- button declaration -->
     <button onclick="validateLogin('admin',1234)">Admin</button>
     <button onclick="validateLogin('user',5678)">User</button>
     <button onclick="validateLogin('guest',2222)">Guest</button>
     <script>
         function validateLogin(username,password) {
-            // admin access
+           
             if(username==='admin' && password===1234) {
                 console.log("Full Access granted");
             }
-            // user access
+            
             else if(username==='user' && password===5678){
                 console.log("Limited Access granted");
             }
-            // guest access
+        
             else if(username==='guest' && password===2222) {
                 console.log("Read-only access");
             }
