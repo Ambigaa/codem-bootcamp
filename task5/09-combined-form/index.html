@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Form Validation</title>
+    <style>
+        body {
+            background-color: rgb(221, 234, 245);
+            font-size: large;
+        }
+        input {
+            width: 200px;
+            height: 25px;
+            padding-left:6px;
+            border:1px solid black;
+            border-radius: 3px;
+            background-color: rgb(243, 250, 255);
+        }
+        button {
+            width: 65px;
+            height: 27px;
+            background-color: rgb(121, 185, 241);
+            border: 1px solid blue;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgb(64, 150, 224);
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Form</h2>
+    <form onsubmit="validateForm(event)">
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter your name:"><br><br>
+        <label>Email: </label>
+        <input type="text" id="email" placeholder="Enter your email: "><br><br>
+        <label>Password: </label>
+        <input type="password" id="password" placeholder="Enter your password:"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        let nameEl=document.getElementById('name');
+        let emailEl=document.getElementById('email');
+        let pwdEl=document.getElementById('password');
+
+        function validateForm(event) {
+            event.preventDefault();
+
+            let name=nameEl.value;
+            let email=emailEl.value;
+            let pwd=pwdEl.value;
+            if(name ==="") {
+                console.log("Name cannot be empty");
+                return false;
+            } 
+            if(email === "") {
+                console.log("Email cannot be empty");
+                return false;
+            }
+            if(pwd===""){
+                console.log("Password cannot be empty");
+                return false;
+            }
+            if(!email.includes('@') || !email.includes('.')) {
+                console.log("Invalid Email");
+                return false;
+            }
+            if(pwd.length<8 ){
+                console.log("Password is too short");
+                return false;
+            }
+            console.log("Form validation successful");
+            return true;
+
+        }
+    </script>
+</body>
+</html>

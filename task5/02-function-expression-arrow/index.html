@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Expression and Arrow Functions</title>
+</head>
+<body>
+    <script>
+        const stringLength=function(str) {
+            return str.length;
+        }
+        const getSquare=(num)=> {
+            return num*num;
+        }
+        let lengthResult=stringLength('functions');
+        let squareResult=getSquare(5);
+        console.log("Length of String:"+lengthResult);
+        console.log("Square of number:"+squareResult);
+    </script>
+</body>
+</html>

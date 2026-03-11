@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation - Email Valid Check</title>
+</head>
+<body>
+    <h2>Form Validation - Email Check</h2>
+    <form onsubmit="validateEmail(event)">
+        <label>Email:</label>
+        <input id="email" placeholder="Enter your email"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        let emailEl=document.getElementById('email');
+        function validateEmail(event) {
+            event.preventDefault();
+
+            let emailVal=emailEl.value;
+
+            if(emailVal.includes('@') && emailVal.includes('.') ) {
+                console.log("Valid email");
+                console.log("Form submitted successfully!");
+                return true;
+            }
+            else {
+                console.log("Invalid email format");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

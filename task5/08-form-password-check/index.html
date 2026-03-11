@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission - Password Length Check</title>
+</head>
+<body>
+    <h2>Form Validation - Password</h2>
+    <form onsubmit="validatePassword(event)">
+        <label>Password: </label>
+        <input type="password" id="password" placeholder="Enter your password"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        let pwdEl=document.getElementById('password');
+        function validatePassword(event) {
+            event.preventDefault();
+
+            let pwd=pwdEl.value;
+            if(pwd === "") {
+                console.log("Password cannot be empty");
+            }
+            else if(pwd.length<8 ) {
+                console.log("Password length should be atleast 8!");
+                return false;
+            }
+            else {
+                console.log("valid Password!.. Form submitted successfully");
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
